@@ -14,6 +14,7 @@ import { EmployeeListingComponent } from './employee-listing/employee-listing.co
 import { EmployeeAddComponent } from './employee-add/employee-add.component';
 import  {HttpClientModule} from '@angular/common/http';
 import { ErrorComponent } from './error/error.component';
+import { LoginComponent } from './auth/login/login.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { ErrorComponent } from './error/error.component';
     AboutCompanyComponent,
     EmployeeListingComponent,
     EmployeeAddComponent,
-    ErrorComponent
+    ErrorComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

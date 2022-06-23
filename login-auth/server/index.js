@@ -31,6 +31,26 @@ const employeeList = [
     },
     
   ];
+
+  const user = [
+    {
+        id:1,
+        email:'a@gmail.com',
+        pass:'123'
+    },
+    {
+        id:2,
+        email:'b@gmail.com',
+        pass:'1234'
+       
+    },
+    {
+        id:3,
+        email:'c@gmail.com',
+        pass:'1233'
+    },
+    
+  ];
   
 
 // adding Helmet to enhance your API's security
@@ -49,6 +69,12 @@ app.use(morgan('combined'));
 app.get('/employee', (req, res) => {
     res.send(employeeList);
   });
+
+  app.get('/user', (req, res) => {
+    res.send(user);
+  });
+
+
 
 
 app.listen(3000,()=>{

@@ -14,4 +14,10 @@
             <td>{{employee.email}}</td>
             <td>{{employee.phone}}</td>
             <td>{{employee.designation}}</td>
-            
+            <td><a routerLink="edit/{{employee.code}}" class="button button2">Edit</a></td>
+        </tr>
+    </tbody>
+</table>
+
+<router-outlet></router-outlet>
+

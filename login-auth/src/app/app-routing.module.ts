@@ -9,6 +9,7 @@ import { HeroeDetailComponent } from './heroe-detail/heroe-detail.component';
 import { AboutCompanyComponent } from './about-company/about-company.component';
 import { EmployeeListingComponent } from './employee-listing/employee-listing.component';
 import { EmployeeAddComponent } from './employee-add/employee-add.component';
+import { ErrorComponent } from './error/error.component';
 
 
 const routes: Routes = [
@@ -23,8 +24,10 @@ const routes: Routes = [
   { path: 'employee', component: EmployeeComponent,
         children:[
           {path:'',component:EmployeeListingComponent},
-          {path:'edit',component:EmployeeAddComponent}
-        ] }
+          {path:'edit/:id',component:EmployeeAddComponent}
+        ] },
+  
+  { path:"**",component:ErrorComponent}
 
 ];
 

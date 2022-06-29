@@ -15,7 +15,10 @@ import { EmployeeAddComponent } from './employee-add/employee-add.component';
 import  {HttpClientModule} from '@angular/common/http';
 import { ErrorComponent } from './error/error.component';
 import { LoginComponent } from './auth/login/login.component';
-
+import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
+import { MessagesComponent } from './messages/messages.component';
+import { NavigationComponent } from './navigation/navigation.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,12 +32,16 @@ import { LoginComponent } from './auth/login/login.component';
     EmployeeListingComponent,
     EmployeeAddComponent,
     ErrorComponent,
-    LoginComponent
+    LoginComponent,
+    MessagesComponent,
+    NavigationComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule 
+    HttpClientModule ,
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

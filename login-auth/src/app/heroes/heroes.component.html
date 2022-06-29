@@ -1,1 +1,17 @@
-<p>heroes works!</p>
+<table class="heores">
+    <thead>
+        <td>Id</td>
+        <td>Name</td>
+    </thead>
+    <tbody>
+        <tr *ngFor="let hero of heroes">
+            <td class="badge">{{hero.id}}</td>
+            <td class="name">{{hero.name}}</td>
+            <td><button [class.selected] ="hero === selectedHero" type="button" (click)="onSelect(hero)" routerLink="/detail/{{hero.id}}"
+                >Details</button></td>
+        </tr>
+
+    </tbody>
+</table>
+
+<app-heroe-detail></app-heroe-detail>

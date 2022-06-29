@@ -1,11 +1,22 @@
 const express = require('express')
+const path = require('path')
 const app = express();
-
 const bodyParser = require('body-parser');
-const cors = require('cors');
+var cors = require('cors');
 const helmet = require('helmet');
 const morgan = require('morgan');
+const connection = require('./util/database')
+require('dotenv').config();
 
+app.use(helmet());
+app.use(bodyParser.json());
+app.use(cors());
+app.use(express.urlencoded({extended:true}))
+app.use(morgan('dev'))
+
+// Routes
+
+const userRoutes = require('./routes/user')
 
 const employeeList = [
     {
@@ -53,30 +64,21 @@ const employeeList = [
   ];
   
 
-// adding Helmet to enhance your API's security
-app.use(helmet());
-
-// using bodyParser to parse JSON bodies into JS objects
-app.use(bodyParser.json());
-
-// enabling CORS for all requests
-app.use(cors());
-
-// adding morgan to log HTTP requests
-app.use(morgan('combined'));
-
 // defining an endpoint to return all ads
 app.get('/employee', (req, res) => {
     res.send(employeeList);
   });
 
-  app.get('/user', (req, res) => {
-    res.send(user);
-  });
+  // custom midddleware
 
 
+ // app.use('/auth', authRoutes);
 
+  app.use('/user',userRoutes)
+  //app.listen(ports, () => console.log(`Listening on port ${ports}`));
 
-app.listen(3000,()=>{
-    console.log('Server is listening')
+app.listen(process.env.PORT,()=>{
+    console.log(`'Server is listening'${process.env.PORT}`)
 })
+
+

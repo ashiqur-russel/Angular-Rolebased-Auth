@@ -14,7 +14,10 @@ yarn-error.log
 # IDEs and editors
 .idea/
 .project
-/.env
+.env
+.env.example
+.env.local
+.env.staging
 .classpath
 .c9/
 *.launch
